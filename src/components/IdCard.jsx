@@ -1,33 +1,33 @@
 import './IdCard.scss';
 
-function IdCard(props) {
+const IdCard = ({ birth, picture, firstName, lastName, gender, height }) => {
   const options = {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
       day: 'numeric',
     },
-    birthFormated = props.birth.toLocaleDateString('de-DE', options);
+    birthFormated = birth.toLocaleDateString('de-DE', options);
 
   return (
     <div className="IdCard box">
-      <img src={props.picture} alt="ID-Card Picture" />
+      <img src={picture} alt="ID-Card Picture" />
       <div className="IdData">
         <p>
           <b>First name: </b>
-          {props.firstName}
+          {firstName}
         </p>
         <p>
           <b>Last name: </b>
-          {props.lastName}
+          {lastName}
         </p>
         <p>
           <b>Gender: </b>
-          {props.gender}
+          {gender}
         </p>
         <p>
           <b>Height: </b>
-          {props.height}
+          {height}
         </p>
         <p>
           <b>Birth: </b>
@@ -36,6 +36,6 @@ function IdCard(props) {
       </div>
     </div>
   );
-}
+};
 
 export default IdCard;

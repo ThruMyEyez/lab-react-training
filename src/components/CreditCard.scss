@@ -1,0 +1,27 @@
+.CreditCard {
+  margin: 10px;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  display: inline-block;
+  .logo {
+    text-align: right;
+    img {
+      height: 21px;
+    }
+  }
+  .expire {
+    text-align: left;
+  }
+  span {
+    margin-left: 20px;
+  }
+  .owner {
+    text-align: left;
+  }
+  .creditNum {
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 20px 0;
+  }
+}

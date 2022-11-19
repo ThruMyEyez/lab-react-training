@@ -1,7 +1,11 @@
 .IdCard {
   display: flex;
+  p {
+    line-height: 1.5rem;
+  }
   img {
     margin: 0 5px 0 0;
+    border-radius: 5px;
   }
   .IdData {
     text-align: left;
