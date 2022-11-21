@@ -1,11 +1,11 @@
 import profiles from '../data/berlin.json';
 
 const FaceBook = () => {
-  console.log(profiles);
   const listProfiles = profiles.map((profile, idx) => {
     const { img, firstName, lastName, country, isStudent } = profile;
+
     return (
-      <div className="IdCard box">
+      <div key={idx} className="IdCard box">
         <img src={img} alt="ID-Card Picture" style={{ width: '7rem' }} />
         <div className="IdData">
           <p>

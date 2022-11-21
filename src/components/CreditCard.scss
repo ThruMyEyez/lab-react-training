@@ -1,7 +1,7 @@
 .CreditCard {
   margin: 10px;
   padding: 20px;
-  width: 300px;
+  width: 340px;
   border-radius: 10px;
   display: inline-block;
   .logo {
@@ -11,6 +11,7 @@
     }
   }
   .expire {
+    margin: 0;
     text-align: left;
   }
   span {

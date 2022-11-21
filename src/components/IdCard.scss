@@ -1,9 +1,11 @@
 .IdCard {
   display: flex;
   p {
+    margin: 0;
     line-height: 1.5rem;
   }
   img {
+    height: 7rem;
     margin: 0 5px 0 0;
     border-radius: 5px;
   }

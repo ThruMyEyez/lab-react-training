@@ -12,12 +12,14 @@ import Carousel from './components/Carousel';
 import NumbersTable from './components/NumbersTable';
 import FaceBook from './components/FaceBook';
 import RGBColorPicker from './components/RGBColorPicker';
+import SignupPage from './components/SignupPage';
 import ThreeComponent from './components/ThreeComponent';
 
 const App = () => {
   return (
     <div className="App">
       <ThreeComponent />
+      <SignupPage />
       <IdCard
         lastName="Doe"
         firstName="John"
@@ -43,6 +45,7 @@ const App = () => {
 
       <BoxColor r={255} g={0} b={0} />
       <BoxColor r={128} g={255} b={0} />
+      <RGBColorPicker />
 
       <CreditCard
         type="Visa"
@@ -119,7 +122,6 @@ const App = () => {
 
       <Dice />
       <NumbersTable limit={12} />
-      <RGBColorPicker />
       <FaceBook />
     </div>
   );
