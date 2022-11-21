@@ -6,13 +6,13 @@ const FaceBook = () => {
 
   const [activeNation, setActiveNation] = useState('');
   //* left for bonus
-  const [isActice, setIsActice] = useState(false);
+  const [activeIdx, setActiveIdx] = useState(false);
 
   const listProfiles = profiles.map((profile, idx) => {
     const { img, firstName, lastName, country, isStudent } = profile;
     //setNations(nations.add(country));
-
     countries.add(country);
+
     return (
       <div
         key={idx}
@@ -26,8 +26,20 @@ const FaceBook = () => {
         }}
         className="IdCard box"
       >
-        <img src={img} alt="ID-Card Picture" style={{ width: '7rem' }} />
-        <div className="IdData">
+        <img
+          src={img}
+          onClick={() => {
+            setActiveIdx(idx);
+            console.log(activeIdx);
+          }}
+          alt="ID-Card Picture"
+          style={{ width: '7rem' }}
+        />
+
+        <div
+          className="IdData"
+          style={{ display: activeIdx === idx ? 'block' : 'none' }}
+        >
           <p>
             <b>First name: </b>
             {firstName}
@@ -41,7 +53,7 @@ const FaceBook = () => {
             {country}
           </p>
           <p>
-            <b>country: </b>
+            <b>Type: </b>
             {isStudent ? 'Student' : 'Teacher'}
           </p>
         </div>
@@ -51,7 +63,8 @@ const FaceBook = () => {
 
   const activateCountry = (data) => {
     console.log('Country btn clicked.', data);
-    setActiveNation(data);
+
+    setActiveNation(data === activeNation ? '' : data);
     console.log('ActiveNation: ', activeNation);
   };
 
