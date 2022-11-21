@@ -79,7 +79,7 @@ const SignupPage = () => {
             id="Password"
             name="password"
             type="password"
-            placeholder="type a strong password"
+            placeholder="6 Characters minimum, use low and uppercase Letters and Numbers."
             value={password}
             onChange={(e) => ValidatePassword(e.target.value)}
             valid={pwValidation === true}

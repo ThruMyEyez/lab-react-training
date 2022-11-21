@@ -16,5 +16,4 @@ const DriverCard = ({ name, rating, img, car }) => {
     </div>
   );
 };
-
 export default DriverCard;

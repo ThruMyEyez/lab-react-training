@@ -20,7 +20,7 @@ const FaceBook = () => {
           backgroundColor:
             activeNation === 'All'
               ? 'cadetblue'
-              : country === activeNation
+              : country === activeNation || activeIdx === idx
               ? 'cadetblue'
               : 'white',
         }}
@@ -29,7 +29,7 @@ const FaceBook = () => {
         <img
           src={img}
           onClick={() => {
-            setActiveIdx(idx);
+            setActiveIdx(activeIdx === idx ? false : idx);
             console.log(activeIdx);
           }}
           alt="ID-Card Picture"
@@ -38,7 +38,14 @@ const FaceBook = () => {
 
         <div
           className="IdData"
-          style={{ display: activeIdx === idx ? 'block' : 'none' }}
+          style={{
+            display:
+              activeIdx === idx ||
+              activeNation === 'All' ||
+              activeNation === country
+                ? 'block'
+                : 'none',
+          }}
         >
           <p>
             <b>First name: </b>

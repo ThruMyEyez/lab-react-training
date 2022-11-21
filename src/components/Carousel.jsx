@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { Button } from 'reactstrap';
 const Carousel = ({ images }) => {
   const [idx, setIdx] = useState(0);
 
@@ -16,10 +16,14 @@ const Carousel = ({ images }) => {
     <div className="box">
       <h2>Carousel</h2>
       <div className="Carousel">
-        <button onClick={prevImg}>Left</button>
+        <Button className="mx-2" color="primary" onClick={prevImg}>
+          Left
+        </Button>
         <img src={images[idx]} alt="Gallery Img" />
         {/* <p>{idx}</p> */}
-        <button onClick={nextImg}>Right</button>
+        <Button className="mx-2" color="primary" onClick={nextImg}>
+          Right
+        </Button>
       </div>
     </div>
   );

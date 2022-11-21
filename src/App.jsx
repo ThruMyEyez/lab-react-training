@@ -1,3 +1,4 @@
+//* Thats a lot...
 import IdCard from './components/IdCard';
 import Greetings from './components/Greetings';
 import Random from './components/Random';
@@ -126,5 +127,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;
