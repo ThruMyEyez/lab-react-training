@@ -17,7 +17,9 @@ const SignupPage = () => {
   const [pwValidation, setPwValidation] = useState('');
   const [nationality, setNationality] = useState(() => 'en');
 
-  const [greeting, setGreeting] = useState('Hello');
+  const [greeting, setGreeting] = useState(
+    "Hello good afternoon. How's it going?"
+  );
 
   const validateEmail = (event_value) => {
     setEmail(event_value);
@@ -46,8 +48,8 @@ const SignupPage = () => {
   };
 
   return (
-    <div className="Signup Page box">
-      <p>{greeting}</p>
+    <div className="box">
+      <p className="mt-2">{greeting}</p>
       <Form className="text-start m-3">
         <FormGroup>
           <Label className="" for="Email">
@@ -84,7 +86,7 @@ const SignupPage = () => {
             invalid={pwValidation === false}
           />
           <FormFeedback>Your password is too weak</FormFeedback>
-          <FormFeedback valid>You typed a valid password</FormFeedback>
+          <FormFeedback valid>Password is valid!</FormFeedback>
           <FormText>Please enter a strong password</FormText>
         </FormGroup>
 
