@@ -1,11 +1,31 @@
 import profiles from '../data/berlin.json';
+import { useState } from 'react';
 
 const FaceBook = () => {
+  const countries = new Set(['All']);
+
+  const [activeNation, setActiveNation] = useState('');
+  //* left for bonus
+  const [isActice, setIsActice] = useState(false);
+
   const listProfiles = profiles.map((profile, idx) => {
     const { img, firstName, lastName, country, isStudent } = profile;
+    //setNations(nations.add(country));
 
+    countries.add(country);
     return (
-      <div key={idx} className="IdCard box">
+      <div
+        key={idx}
+        style={{
+          backgroundColor:
+            activeNation === 'All'
+              ? 'cadetblue'
+              : country === activeNation
+              ? 'cadetblue'
+              : 'white',
+        }}
+        className="IdCard box"
+      >
         <img src={img} alt="ID-Card Picture" style={{ width: '7rem' }} />
         <div className="IdData">
           <p>
@@ -29,9 +49,32 @@ const FaceBook = () => {
     );
   });
 
+  const activateCountry = (data) => {
+    console.log('Country btn clicked.', data);
+    setActiveNation(data);
+    console.log('ActiveNation: ', activeNation);
+  };
+
+  const listCountryBtns = [...countries].map((country, idx) => {
+    return (
+      <button
+        key={idx}
+        onClick={() => activateCountry(country)}
+        style={{
+          marginRight: '0.5rem',
+          marginTop: '0.5rem',
+          backgroundColor: country === activeNation ? 'cadetblue' : 'white',
+        }}
+      >
+        {country}
+      </button>
+    );
+  });
+
   return (
     <div className="box">
       <h2>FaceBook</h2>
+      {listCountryBtns}
       {listProfiles}
     </div>
   );
